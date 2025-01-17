@@ -1,0 +1,126 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <strings.h>
+
+int fibonacci(int n);
+
+int main(void)
+{
+
+    int input;
+    do
+    {
+        input = get_int("Integer: ");
+    }
+    while (input < 0);
+
+
+    // function call
+    printf("%i\n", fibonacci(input));
+
+}
+
+
+int fibonacci(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    else if (n == 1)
+    {
+        return 1;
+    }
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
+
+
+
+
+
+////// BREAK //////////
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <strings.h>
+
+int naturalNumbers(int n);
+
+int main(void)
+{
+    // Get input
+    int n;
+    do
+    {
+        n = get_int("int: ");
+    }
+    while (n < 0);
+
+    // Call to function
+    printf("%i\n", naturalNumbers(n));
+}
+
+
+int naturalNumbers(int n)
+{
+    if (n == 1)
+    {
+        return 1;
+    }
+
+    return naturalNumbers(n-1) + n;
+}
+
+
+
+
+
+
+
+
+
+////// BREAK //////////
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+void reverse_string(char str[], int start, int end);
+
+int main(void)
+{
+
+    string input = get_string("Input: ");
+
+    int length = strlen(input);
+
+    reverse_string(input, 0, length - 1);
+
+    printf("Reverse string: %s\n", input);
+}
+
+
+void reverse_string(char str[], int start, int end)
+{
+    if (start >= end)
+    {
+        return;
+    }
+
+    char temp = str[start];
+    str[start] = str[end];
+    str[end] = temp;
+
+    reverse_string(str, start + 1, end - 1);
+}
+
+
+
+
+
+
+
