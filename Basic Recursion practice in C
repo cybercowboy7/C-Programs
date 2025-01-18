@@ -122,5 +122,64 @@ void reverse_string(char str[], int start, int end)
 
 
 
+////// BREAK //////
+
+
+#include <cs50.h>
+#include <string.h>
+#include <stdio.h>
+
+void reverse(int n);
+
+int main(void)
+{
+
+    //Receive & validate user input
+
+    int n;
+    do
+    {
+        n = get_int("Input: ");
+    }
+    while(n < 1);
+
+    // Call reverse function
+    reverse(n);
+    printf("\n");
+
+}
+
+
+void reverse(int n)
+{
+    if (n == 0)
+    {
+        return;
+    }
+
+    printf("%i ", n);
+    return reverse(n-1);
+}
+
+
+
+
+///////// BREAK //////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
