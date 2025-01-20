@@ -167,6 +167,47 @@ void reverse(int n)
 ///////// BREAK //////////
 
 
+#include <cs50.h>
+#include <string.h>
+#include <stdio.h>
+
+
+
+int x;
+int y;
+
+int powerF(int a, int b);
+
+int main(void)
+{
+    // receive input and validate
+    do
+    {
+        x = get_int("Input 1: ");
+        y = get_int("Input 2: ");
+    }
+    while(x < 1 || y < 1);
+
+    // Call to function and print
+    int product = powerF(x, y);
+    printf("%i\n", product);
+
+}
+
+
+int powerF(int a, int b)
+{
+    if (b == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        b--;
+    }
+    return a * powerF(a , b);
+}
+
 
 
 
